@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Violet Glassy Dress Shop</title>
+
+<style>
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* BACKGROUND */
+body{
+    background: linear-gradient(135deg, #2b1055, #7597de);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* GLASS EFFECT */
+.glass{
+    background: rgba(255,255,255,0.1);
+    border-radius:20px;
+    backdrop-filter: blur(15px);
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 8px 32px rgba(0,0,0,0.2);
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+nav ul{
+    display:flex;
+    gap:20px;
+    list-style:none;
+}
+
+nav ul li{
+    cursor:pointer;
+}
+
+nav ul li:hover{
+    color:#ffb3ff;
+}
+
+/* SECTIONS */
+section{
+    min-height:100vh;
+    padding:100px 20px;
+}
+
+/* HOME */
+.home{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.home h1{
+    font-size:3rem;
+}
+
+.home p{
+    margin-top:10px;
+    opacity:0.8;
+}
+
+/* PRODUCTS */
+.products{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    padding:20px;
+    text-align:center;
+}
+
+.card img{
+    width:100%;
+    border-radius:15px;
+}
+
+.card button{
+    margin-top:10px;
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    background:#a855f7;
+    color:white;
+    cursor:pointer;
+}
+
+.card button:hover{
+    background:#9333ea;
+}
+
+/* ABOUT */
+.about{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+}
+
+/* CONTACT */
+.contact form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    max-width:400px;
+    margin:auto;
+}
+
+input, textarea{
+    padding:10px;
+    border:none;
+    border-radius:10px;
+}
+
+button.submit{
+    background:#c084fc;
+    border:none;
+    padding:10px;
+    border-radius:20px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    opacity:0.7;
+}
+
+/* PAGE HIDE/SHOW */
+.page{
+    display:none;
+}
+.page.active{
+    display:block;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="glass">
+    <h2>💜 Violet Wear</h2>
+    <ul>
+        <li onclick="showPage('home')">Home</li>
+        <li onclick="showPage('shop')">Shop</li>
+        <li onclick="showPage('about')">About</li>
+        <li onclick="showPage('contact')">Contact</li>
+        <li onclick="showPage('offers')">Offers</li>
+    </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="page active home">
+    <div class="glass" style="padding:40px;">
+        <h1>Welcome to Violet Fashion</h1>
+        <p>Glassy Style | Trendy Dresses | Elegant Look</p>
+    </div>
+</section>
+
+<!-- SHOP -->
+<section id="shop" class="page">
+    <h2 style="text-align:center;margin-bottom:20px;">Shop Dresses</h2>
+
+    <div class="products">
+        <div class="card glass">
+            <img src="https://via.placeholder.com/250">
+            <h3>Evening Dress</h3>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="card glass">
+            <img src="https://via.placeholder.com/250">
+            <h3>Party Wear</h3>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="card glass">
+            <img src="https://via.placeholder.com/250">
+            <h3>Casual Dress</h3>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="card glass">
+            <img src="https://via.placeholder.com/250">
+            <h3>Wedding Dress</h3>
+            <button>Buy Now</button>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="page">
+    <div class="about glass" style="padding:30px;">
+        <h2>About Us</h2>
+        <p>
+            We provide stylish, modern and elegant dresses with a premium glassy experience.
+            Our mission is to make you look unique and confident.
+        </p>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="page">
+    <h2 style="text-align:center;">Contact Us</h2>
+
+    <div class="contact glass" style="padding:30px;">
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button class="submit">Send</button>
+        </form>
+    </div>
+</section>
+
+<!-- OFFERS -->
+<section id="offers" class="page">
+    <h2 style="text-align:center;">Special Offers</h2>
+
+    <div class="products">
+        <div class="card glass">
+            <h3>50% OFF</h3>
+            <p>On Party Wear</p>
+        </div>
+
+        <div class="card glass">
+            <h3>Buy 1 Get 1</h3>
+            <p>Casual Collection</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Violet Wear | All Rights Reserved</p>
+</footer>
+
+<script>
+function showPage(pageId){
+    let pages = document.querySelectorAll('.page');
+    pages.forEach(p => p.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+}
+</script>
+
+</body>
+</html>
